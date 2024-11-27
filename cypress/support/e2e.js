@@ -12,7 +12,11 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-
+// Preserva os cookies entre os testes
+Cypress.Cookies.defaults({
+    preserve: true,
+  });
+  
 // Import commands.js using ES2015 syntax:
 import './commands'
 
