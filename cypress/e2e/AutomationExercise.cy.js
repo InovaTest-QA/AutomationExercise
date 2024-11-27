@@ -6,7 +6,7 @@ describe('Validação do valor total do carrinho', () => {
     // Captura os preços individuais dos produtos
     let somaProdutos = 0;
 
-    cy.get('.cart_price') // Seletor para os preços individuais
+    cy.get('.cart_price p') // Seletor para os preços individuais
       .each(($el) => {
         // Converte o texto do preço para número
         const preco = parseFloat($el.text().replace('R$', '').replace(',', '.').trim());
@@ -14,7 +14,7 @@ describe('Validação do valor total do carrinho', () => {
       })
       .then(() => {
         // Captura o valor total exibido no carrinho
-        cy.get('.cart_total_price') // Seletor para o total
+        cy.get('.cart_total_price p') // Seletor para o total
           .invoke('text')
           .then((totalText) => {
             // Converte o valor total para número
