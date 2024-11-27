@@ -8,7 +8,7 @@ Cypress.Commands.add('loginViaUI', () => {
   cy.get('input[data-qa="login-password"]').type('teste01'); // Campo de senha
 
   // Clica no botão de login
-  cy.get('button[type="submit"]').click(); 
+  cy.get('button[type="submit"]').first().click();
 
   // Verifica se o login foi bem-sucedido
   cy.url().should('not.include', '/login'); 
