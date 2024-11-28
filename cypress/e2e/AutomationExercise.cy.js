@@ -97,3 +97,9 @@ describe('Validação do valor total do carrinho', () => {
       });
   });
 });
+describe('Excluindo produtos ao carrinho', () => {
+  it('Deve Excluir dois produtos do carinho', () => {
+    cy.ExcluirUmProdutoCarrinho()   // Excluir 1 item do carrinho
+    cy.ExcluirDoisProdutoCarrinho() // Excluir 2 item do carrinho
+  })
+});

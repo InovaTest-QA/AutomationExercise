@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+//Excluindo produto ao carrinho
+Cypress.Commands.add('ExcluirUmProdutoCarrinho', () => {
+    cy.get('.nav.navbar-nav')
+    cy.get('.fa.fa-shopping-cart') //Localiza o Icon Cart
+        .first()
+        .click()
+    cy.get('#cart_info_table') // Localizar os itens
+        .as('Visualizar produtos no carrinho') //Aviso visulizando produtos no carrinho
+    cy.get('[data-product-id="1"]') // Excluir o 1º Item
+        .click()
+})
+Cypress.Commands.add('ExcluirDoisProdutoCarrinho', () => {
+    cy.get('[data-product-id="2"]') // Excluir o 2º Item
+        .click()
+        .as('Excluido produtos no carrinho') //Aviso que foi excluido
+    cy.get('#empty_cart').click()
+        .and('contains.text', 'Cart is empty!')
+})
