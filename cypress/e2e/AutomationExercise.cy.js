@@ -100,7 +100,7 @@ describe('Validação do valor total do carrinho', () => {
 
 
 
-describle('Registro de usuário',() => {
+describe('Registro de usuário',() => {
   beforeEach(()=> {
     // Executar o navegador
     // Acessar a url da aplicação
@@ -126,8 +126,7 @@ it('Registrar um novo usuário antes de finalizar uma compra', () => {
   cy.url().should('include', '/checkout');
 
   // Clica no botão de registro/login
-  cy.get('#signup_link').click();
-
+  cy.get('.modal-body > :nth-child(2) > a > u').click();
 
   // Valida que a página inicial carregou com sucesso
   cy.get('a > img').should('be.visible');
@@ -203,5 +202,4 @@ it('Registrar um novo usuário antes de finalizar uma compra', () => {
 
   // Clicar no botão 'Delete Account'
   cy.get('.shop-menu > .nav > :nth-child(5) > a').click();
-  });
 });
