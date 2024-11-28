@@ -91,7 +91,7 @@ describe('Validação do valor total do carrinho', () => {
           .then((totalText) => {
             const total = parseFloat(totalText.replace('Rs.', '').replace(',', '').trim());
 
-            // Comparar o valor calculado com o exibido
+            // Comparar valor calculado com o exibido
             expect(total).to.equal(somaProdutos);
           });
       });
